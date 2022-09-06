@@ -1,0 +1,105 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --background: hsl(0, 0%, 20%);
+  --playboard: hsl(0, 0%, 85%);
+  --current-player: hsl(0, 0%, 53%);
+  --shadow: hsla(0, 0%, 20%, 0.5);
+}
+
+body {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Inter", sans-serif;
+  font-size: 62.5%;
+  min-height: 100vh;
+  background-color: var(--background);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.current-player {
+  background-color: var(--current-player);
+}
+
+.shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--shadow);
+  z-index: 10;
+}
+
+.main {
+  position: relative;
+  width: 90%;
+  border-radius: 10px;
+  background-color: var(--playboard);
+  overflow: hidden;
+}
+.main__popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 90%;
+  height: 60%;
+  background-color: var(--playboard);
+  z-index: 15;
+}
+.main__popup--win {
+  -webkit-transition: display 0.5s;
+  transition: display 0.5s;
+}
+
+@media (min-width: 425px) {
+  .section .hold-text {
+    font-size: 1.2rem;
+  }
+  .section .roll-text {
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 768px) {
+  body {
+    background-image: url("https://cdn.pixabay.com/photo/2016/09/25/04/01/games-1693114_960_720.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  .main {
+    height: 80vh;
+    max-width: 1000px;
+  }
+}/*# sourceMappingURL=style.css.map */

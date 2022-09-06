@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap"
+			rel="stylesheet" />
+		<script
+			src="https://kit.fontawesome.com/200e3edf8e.js"
+			crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="./dist/css/style.min.css" />
+		<title>Pig game</title>
+	</head>
+	<body>
+		<div class="blur"></div>
+		<div class="main">
+			<div class="main__shadow shadow"></div>
+			<div class="main__popup main__popup--game-rules">
+				<h1 class="main__title">Pig game</h1>
+				<h2 class="main__sectionTitle">Game rules</h2>
+				<li class="main__li">
+					<ul class="main__ulItem">
+						First player which reach 100 points on global score wins the game
+					</ul>
+					<ul class="main__ulItem">
+						Game has 2 players which playing in rounds
+					</ul>
+					<ul class="main__ulItem">
+						In each turn, player turns a dice as many times as he wishes, but if
+						the player rolls a 1 he wiill lost his current points
+					</ul>
+					<ul class="main__ulItem">
+						When player use 'hold' button, his current points will be added to
+						total score.
+					</ul>
+				</li>
+				<button class="main__button main__button--enter-game return">
+					Enter game
+				</button>
+			</div>
+			<div class="main__popup main__popup--pausePop hidden">
+				<h2 class="main__sectionTitle">Game paused</h2>
+				<button class="main__button main__button--reset-game reset">
+					Reset game
+				</button>
+				<button class="main__button main__button--enter-game return">
+					Return
+				</button>
+			</div>
+			<div class="main__popup main__popup--win hidden">
+				<h2 class="main__sectionTitle">
+					<span class="main__player"></span>player win!
+				</h2>
+				<button class="main__button main__button--reset-game reset">
+					Reset game
+				</button>
+			</div>
+			<section class="section section__playboard">
+				<button class="section__button section__button--roll roll">
+					<span class="roll-text">Roll dice</span>
+				</button>
+				<button
+					class="section__button--pause section__button--animated section__button--white pause">
+					<i class="fa-solid fa-pause"></i>
+				</button>
+				<button class="section__button section__button--hold hold">
+					<span class="hold-text">Hold</span>
+				</button>
+				<div class="section__top top">
+					<h3 class="section__player-name section__player-name--first">
+						Player 1
+					</h3>
+					<div class="section__box section__box--first">
+						<p class="section__text">Current</p>
+						<span class="section__current-points section__current-points--first"
+							>0</span
+						>
+					</div>
+					<p class="section__number-info section__number-info--first">0</p>
+				</div>
+				<div class="section__bottom bottom">
+					<h3 class="section__player-name section__player-name--second">
+						Player 2
+					</h3>
+					<div class="section__box section__box--second">
+						<p class="section__text">Current</p>
+
+						<span
+							class="section__current-points section__current-points--second"
+							>0</span
+						>
+					</div>
+					<p class="section__number-info section__number-info--second">0</p>
+				</div>
+
+				<!-- <img src="" alt="dice img" class="section__dice" /> -->
+			</section>
+			<!-- <section class="section section--desktop desktop hidden">
+				<h3 class="section--desktop__player-name section--desktop__player-name--first">
+					Player 1
+				</h3>
+				<h3 class="section--desktop__player-name section--desktop__player-name--second">
+					Player 2
+				</h3>
+				<button class="section--desktop__button section--desktop__button--pause pause">
+					<i class="fa-solid fa-pause"></i>
+				</button>
+				<button class="section--desktop__button section--desktop__button--roll roll-text roll">
+					Roll dice
+				</button>
+				<button class="section--desktop__button section--desktop__button--hold hold">
+					<span class="hold-text">Hold</span>
+				</button>
+				<div class="section--desktop__box">
+					<p class="section--desktop__text">Current</p>
+					<span
+						class="section--desktop__current-points section--desktop__current-points--first"></span>
+				</div>
+				<div class="section--desktop__box">
+					<p class="section--desktop__text">Current</p>
+					<span class="section--desktop__current-points section--desktop__current-points--second"
+						>0</span
+					>
+				</div>
+			</section> -->
+		</div>
+		<script src="./src/js/main.js" defer></script>
+	</body>
+</html>
