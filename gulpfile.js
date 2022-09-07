@@ -16,6 +16,7 @@ const paths = {
 	js: './src/js/**/*.js',
 	distJs: './dist/js',
 };
+
 function sassCompiler(done) {
 	src(paths.sass)
 		.pipe(sourcemaps.init())

@@ -24,8 +24,10 @@ const popUps = {
 	pauseGame: document.querySelector('.main__popup--pausePop'),
 	winPop: document.querySelector('.main__popup--win'),
 };
+
 const dice = document.querySelectorAll('.dice');
 const winner = document.querySelector('.main__player');
+
 const { shadow, gameRules, pauseGame, winPop } = popUps;
 const { playboard, desktop, topPart, bottomPart } = playboards;
 const { pauseBtn, holdBtn, rollBtn, returnToGameBtn, resetBtn } = btns;
@@ -76,13 +78,16 @@ const randomNumber = () => {
 
 const holdFunction = () => {
 	addHiddenDice();
+
 	const calculateTopScr = (topScr, curScr) => {
 		topScr.textContent =
 			Number(curScr.textContent) + Number(topScr.textContent);
 		curScr.textContent = 0;
 		if (Number(topScr.textContent) >= finalScore) {
 			showWinPop();
-			winner.textContent = 'First ';
+			topScrP1.textContent >= 10
+				? (winner.textContent = 'First ')
+				: (winner.textContent = 'Second ');
 		}
 	};
 
@@ -116,27 +121,21 @@ const appropriateDice = () => {
 	) {
 		case number === 1:
 			addHiddenDice(dice[0]);
-
 			break;
 		case number === 2:
 			addHiddenDice(dice[1]);
-
 			break;
 		case number === 3:
 			addHiddenDice(dice[2]);
-
 			break;
 		case number === 4:
 			addHiddenDice(dice[3]);
-
 			break;
 		case number === 5:
 			addHiddenDice(dice[4]);
-
 			break;
 		case number === 6:
 			addHiddenDice(dice[5]);
-
 			break;
 	}
 };
@@ -150,7 +149,6 @@ const rollDice = () => {
 		sum = arr.reduce((a, b) => a + b, 0);
 		curScr.textContent = sum;
 	};
-
 	const drawnOne = curScr => {
 		arr = [];
 		curScr.textContent = 0;

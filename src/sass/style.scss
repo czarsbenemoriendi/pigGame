@@ -3,6 +3,15 @@
 	padding: 0;
 	margin: 0;
 }
+*::-webkit-scrollbar {
+	width: 1em;
+}
+
+*::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background-color: darkgrey;
+	outline: 1px solid slategrey;
+}
 :root {
 	--background: hsl(0, 0%, 20%);
 	--playboard: hsl(0, 0%, 85%);
@@ -46,15 +55,19 @@ body {
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		translate: -50% -50%;
+		transform: translate(-50%, -50%);
 		display: flex;
 		flex-direction: column;
-		justify-content: space-evenly;
 		align-items: center;
+		padding: 20px 0;
+		border-radius: 10px;
 		width: 90%;
-		height: 85%;
+		height: 90%;
 		background-color: var(--playboard);
 		z-index: 15;
+		overflow-y: auto;
+		scrollbar-color: rebeccapurple green;
+		scrollbar-width: thin;
 		&--win {
 			transition: display 0.5s;
 		}
@@ -69,8 +82,7 @@ body {
 		font-size: 1rem;
 		width: 60%;
 		list-style: none;
-		font-size: 1.2rem;
-		text-align: center;
+		font-size: 0.9rem;
 	}
 	&__ulItem {
 		padding: 10px 0;
@@ -213,7 +225,7 @@ body {
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		translate: -50% -50%;
+		transform: translate(-50%, -50%);
 	}
 	&__button:hover,
 	&__button--pause:hover {
@@ -230,6 +242,11 @@ body {
 }
 
 @media (min-width: 425px) {
+	.main {
+		&__popup {
+			max-width: 70%;
+		}
+	}
 	.section {
 		.hold-text {
 			font-size: 1.2rem;
@@ -256,12 +273,14 @@ body {
 		}
 	}
 	.main {
-		height: 80vh;
+		min-height: 500px;
+		max-height: 800px;
 		max-width: 1000px;
 		&__popup {
 			width: 60%;
-			height: 85%;
-			border-radius: 10px;
+			height: 90%;
+			padding: 10px;
+			justify-content: space-evenly;
 		}
 		&__title {
 			font-size: 2.5rem;
@@ -271,6 +290,7 @@ body {
 		}
 		&__li {
 			width: 60%;
+			font-size: 0.9rem;
 		}
 		&__button {
 			width: 150px;
@@ -287,7 +307,6 @@ body {
 			height: 100%;
 			grid-column: 4/7;
 			grid-row: 1/7;
-			border-top: none;
 		}
 		&__box {
 			background-color: gray;
@@ -319,7 +338,7 @@ body {
 				position: absolute;
 				top: 50%;
 				left: 50%;
-				translate: -50% -50%;
+				transform: translate(-50%, -50%);
 				width: 150px;
 				height: 60px;
 				line-height: 60px;
@@ -333,6 +352,7 @@ body {
 			}
 			&--hold {
 				margin: auto;
+				margin-top: 70px;
 				grid-row: 4/5;
 				grid-column: 3/5;
 				cursor: pointer;
@@ -381,6 +401,15 @@ body {
 		}
 		&__dice {
 			grid-row: 1/5;
+		}
+	}
+}
+@media (min-width: 1024px) {
+	.section {
+		&__button {
+			&--hold {
+				margin-top: 70px;
+			}
 		}
 	}
 }
